@@ -23,13 +23,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            UserpulseTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            val error = viewModel.errorMessage.value
+            if (error != null) {
+                Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+            }
+
+            UserListScreen(viewModel) { user ->
+                val intent = Intent(this, DetailActivity::class.java).apply {
+                    putExtra("name", user.name)
+                    putExtra("username", user.username)
+                    putExtra("email", user.email)
+                    putExtra("phone", user.phone)
+                    putExtra("website", user.website)
                 }
+
+                startActivity(intent)
             }
         }
     }
