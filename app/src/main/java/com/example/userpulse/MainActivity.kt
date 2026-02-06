@@ -19,6 +19,8 @@ import viewmodel.UserViewModel
 import kotlin.getValue
 
 class MainActivity : ComponentActivity() {
+    private val viewModel by viewModels<UserViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
