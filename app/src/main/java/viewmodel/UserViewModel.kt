@@ -20,7 +20,7 @@ class UserViewModel : ViewModel() {
             errorMessage.value = null
             try {
                 users.value = RetrofitInstance.api.getUsers()
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 errorMessage.value = "Failed to fetch users. Check internet."
             } finally {
                 isLoading.value = false
