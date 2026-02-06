@@ -66,4 +66,5 @@ Follow these steps to set up and run the project on your machine:
 * **Error Handling**: Turn off internet/Airplane mode and relaunch the app to verify the error Toast message.
 
 # No internet Scenario
-![nointernetscenario.jpg.jpeg](nointernetscenario.jpg.jpeg)
+
+<img alt="nointernetscenario.jpg.jpeg" src="nointernetscenario.jpg.jpeg" width="250"/>
