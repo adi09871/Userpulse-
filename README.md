@@ -65,6 +65,6 @@ Follow these steps to set up and run the project on your machine:
 * **Navigation**: Click on any user card (e.g., "Leanne Graham") to verify the Detail Screen opens with correct data.
 * **Error Handling**: Turn off internet/Airplane mode and relaunch the app to verify the error Toast message.
 
-# No internet Scenario
+# No internet Scenario with toast message 
 
 <img alt="nointernetscenario.jpg.jpeg" src="nointernetscenario.jpg.jpeg" width="250"/>
