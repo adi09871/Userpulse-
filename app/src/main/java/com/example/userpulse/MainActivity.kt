@@ -69,8 +69,22 @@ fun UserListScreen(viewModel: UserViewModel, onClick: (User) -> Unit) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    UserpulseTheme {
-        Greeting("Android")
+fun UserCard(user: User, onClick: (User) -> Unit) {
+    Card(
+        modifier = Modifier.fillMaxWidth().padding(8.dp).clickable { onClick(user) },
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(4.dp)
+    ) {
+        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(50.dp).background(Color(0xFFF4511E), CircleShape), contentAlignment = Alignment.Center) {
+                Text(user.name.take(2).uppercase(), color = Color.White, fontWeight = FontWeight.Bold)
+            }
+            Spacer(Modifier.width(16.dp))
+            Column(Modifier.weight(1f)) {
+                Text(user.name, fontWeight = FontWeight.Bold)
+                Text(user.email, color = Color.Gray, fontSize = 12.sp)
+            }
+            Icon(Icons.Default.KeyboardArrowRight, contentDescription = null, tint = Color.Gray)
+        }
     }
 }
