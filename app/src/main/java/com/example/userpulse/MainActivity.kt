@@ -46,11 +46,25 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun UserListScreen(viewModel: UserViewModel, onClick: (User) -> Unit) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("UserPulse", color = Color.White) },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFF008080))
+            )
+        }
+    ) { padding ->
+        if (viewModel.isLoading.value) {
+            Box(Modifier.fillMaxSize(), Alignment.Center) { CircularProgressIndicator() }
+        } else {
+            LazyColumn(modifier = Modifier.padding(padding).fillMaxSize()) {
+                items(viewModel.users.value) { user ->
+                    UserCard(user, onClick)
+                }
+            }
+        }
+    }
 }
 
 @Preview(showBackground = true)
