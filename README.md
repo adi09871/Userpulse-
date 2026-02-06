@@ -12,8 +12,8 @@ The app is designed to fulfill the Android Developer Intern assignment requireme
 * **Navigation**: Uses explicit **Intents** to navigate from the User List to the Detail Screen.
 
  # Screenshots 
-![homescreen.png](homescreen.png)![lazycloumnhomescreen.png](lazycloumnhomescreen.png)
-![deatilsscreen.png](deatilsscreen.png)
+| <img src="homescreen.png" width="250" /> |
+<img src="lazycloumnhomescreen.png" width="250" /> | <img src="deatilsscreen.png" width="250" /> |
 
 
 # Tech Stack
